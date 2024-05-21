@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'cataleg.apps.CatalegConfig',
     'client.apps.ClientConfig',
     'comandes.apps.ComandesConfig',
-    'pagament.apps.PagamentConfig'
-    
-    
+    'pagament.apps.PagamentConfig', 
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
