@@ -49,8 +49,12 @@ def producte_update_stock(request,pk):
 
     return Response({"data":serializer.data})
 
-@api_view(['DELETE'])
+@api_view(['PUT'])
 def producte_delete(request,pk):
     producte = Producte.objects.get(id=pk)
-    producte.delete()
-    return Response({"data": "Producte deleted"})
+    producte.marcat = True
+    producte.save()
+
+    serializer = ProducteSerializer(producte)
+
+    return Response({"data":serializer.data})
